@@ -63,15 +63,15 @@
             width: 40%;
             height: 200px;
             text-align: center;
-            color: #16b1b1;
+            color: #FFB855;
             font-style: oblique;
         }
             .btn-class{
                 position: absolute;
                 top: 20em;
                 right: 4.4em;
-                border: 3px solid #16b1b1;
-                color: #FFB855;
+                border: 3px solid #af8041;
+                color: #af8041;
                 text-decoration: none;
                 text-transform: uppercase;
                 font-weight: 500;
