@@ -9,24 +9,24 @@ $(window).on('scroll', function() {
      }
 });
 
-// OPEN/CLOSED  MENU-MOBILE
-$('.btn-menu').click(function() {
-     $('nav').addClass('selected');
+//SCROLL-IMAGE
+$(window).on('scroll', function() {
+     let scroll = $(window).scrollTop();
+     let image = document.getElementById('image');
+
+     if (scroll >= 20) {
+
+          image.src = "/imgs/Mj/MaryJaneOff.png";
+     
+     } else {
+         
+          image.src = "/imgs/Mj/MaryJaneOn.png";
+     }
 });
 
-$('nav a.closed').click(function() {
-     $('nav').removeClass('selected');
-});
 
-//FLIPER IMGS CLICK
-$(document).ready(function(){
-     $('.container').click(function(){
-          $(this).toggleClass('active');
-     });
-});
-
-// MENU SROLL ======
-$('.menu a.closed').click(function(e){
+// MENU SCROLL ======
+$('.menu a.rollScroll').click(function(e){
      e.preventDefault();
 
      let id = $(this).attr('href'), 
@@ -35,7 +35,18 @@ $('.menu a.closed').click(function(e){
      
          $('html, body').animate({
           scrollTop : targetOffset - menuHeight,
-     }, 500);
+     }, 900);
 });
+
+
+
+// OPEN/CLOSED  MENU-MOBILE
+// $('.btn-menu').click(function() {
+//      $('nav').addClass('selected');
+// });
+
+// $('nav a.closed').click(function() {
+//      $('nav').removeClass('selected');
+// });
 
 

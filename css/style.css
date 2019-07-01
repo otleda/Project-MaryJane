@@ -1,5 +1,15 @@
 /* HEADER */
-.header { 
+.header{ 
+    position: fixed; 
+    display: flex; 
+    justify-content: space-around; 
+    width: 100%; 
+    height: 100px; 
+    z-index: 3; 
+    transition: .2s linear;
+}
+
+.header.fixed { 
     position: fixed; 
     display: flex; 
     justify-content: space-around; 
@@ -10,6 +20,7 @@
     border-bottom: 2px solid; 
     z-index: 3; 
 }
+
     .logo img { 
         max-width: 200px; 
         min-width: 200px; 
@@ -24,15 +35,54 @@
                 padding: 1em; 
             }
                 .menu a { 
-                    color: #af8041; 
+                    color: #b87d31;
                     text-decoration: none; 
                     font-weight: 300; 
+                    position: relative;
+                }
+                .menu a:hover {
+                    color: #ce8c35;
                 }
 
-    .r_social { display: flex; align-items: center; }
-        .r_social img { padding: 1em; width: 60px; }
-        .r_social > a:nth-child(3) > img { width: 70px; }
+                .menu a:after { 
+                    content: "";
+                    position: absolute;
+                    top: 20px;
+                    left: 10px;
+                    right: 10px;
+                    height: 1px;
+                    background: #af8041;
+                    -webkit-transform: scaleX(0);
+                            transform: scaleX(0);
+                    transition: -webkit-transform 150ms ease-in-out;
+                    transition: transform 150ms ease-in-out;
+                    transition: transform 150ms ease-in-out, 
+                    -webkit-transform 150ms ease-in-out;
+                }
+                .menu a:hover::after {
+                    -webkit-transform: scaleX(1.2);
+                            transform: scaleX(1.2);
+                    }
 
+    .r_social { 
+        display: flex; 
+        align-items: center; 
+    }
+    
+    .r_social .fa-facebook,  
+    .r_social .fa-instagram, 
+    .r_social .fa-youtube {
+        color: #F9AF48;
+        font-size: 1.7em;
+        padding: 1em; 
+        transition: .2s ease-in-out;
+    }
+    .r_social .fa-facebook:hover,  
+    .r_social .fa-instagram:hover, 
+    .r_social .fa-youtube:hover {
+        color: #F2A02F;
+    }
+        
 
 /* BANNER */
 .banner {
@@ -96,11 +146,13 @@
 }
     .about img { 
         position: relative; 
-        top: 150px; 
+        top: 8%; 
         left: 32%; 
         transform: translate(-50%, -50%); 
         width: 60%;
-        filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, .3));
+        filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, .9));
+        cursor: pointer;
+        transition: .2s linear;
 
 
     }
@@ -142,17 +194,21 @@
             flex-direction: column;
             align-items: flex-end;
             padding: 5em;
-            background: #FFB855;
+            background: #fad2b3 url("..//imgs/Mj/MaryViolino.png") no-repeat fixed left;
+            background-size: contain;
         }
 
         .about-text p {
             color: #413838;
             text-align: justify;
-            margin-top: 20%;
+            margin-top: 18%;
+            line-height: 1.6em;
+            width: 50%;
         }
         .about-text strong {
             color: #413838;
             font-weight: 600;
+            font-size: 1.6em;
         }
         .about-text span {
             font-family: 'Alex Brush', cursive; 
@@ -170,7 +226,7 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    background: #1f1b1a;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.89), rgba(0, 0, 0, 0.918), black);
     padding: 2em;
     z-index: 2;
 }
@@ -196,7 +252,7 @@
             flex-direction: column;
             align-items: center;
             width: 28%;
-            height: 465px;
+            height: 425px;
             padding: 1em;
             border-radius: 10px;
             background: #f7f4f4;
@@ -270,6 +326,13 @@
             border-radius: 10px;
             margin: .6em;
             overflow: hidden;
+            filter: sepia(1);
+            transition: .2s linear;
+            }
+            .box-img:hover {
+                filter: sepia(0);
+                box-shadow: 0px 10px 10px rgba(0, 0, 0, .3);
+                transform: translateY(-2px)
             }
           
 /* MOVIES */
@@ -321,6 +384,7 @@
         font-size: 2em;
         font-weight: 200;
     }
+    
     .footer .form {
         display: flex;
         width: 100%;
@@ -336,7 +400,7 @@
             padding: 5em;
         }
             .footer img {
-                width: 300px;
+                width: 280px;
             }
 
         .footer form {
