@@ -1,0 +1,21 @@
+/* HEADER */
+@media (max-width: 1000px){
+    .header, .header.fixed {
+        /* margin-left: 1000vh; */
+        height: 100%;
+        flex-direction: column;
+        background: white;
+    }
+    .header .logoAndBtMenu img{
+        position: relative;
+        display: flex;
+        max-width: 50%;
+        min-width: 200px;
+    }
+    .header .menu {
+        flex-direction: column;
+    }
+    .btn-menu {
+        display: block;
+    }
+}

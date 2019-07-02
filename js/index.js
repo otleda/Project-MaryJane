@@ -14,13 +14,13 @@ $(window).on('scroll', function() {
      let scroll = $(window).scrollTop();
      let image = document.getElementById('image');
 
-     if (scroll >= 20) {
+     if (scroll >= 10) {
 
-          image.src = "/imgs/Mj/MaryJaneOff.png";
+          image.src = "imgs/Mj/MaryJaneFront.png";
      
      } else {
          
-          image.src = "/imgs/Mj/MaryJaneOn.png";
+          image.src = "imgs/Mj/MaryJaneRight.png";
      }
 });
 
